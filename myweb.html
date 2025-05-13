@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zinabu Bekele Tadese | Public Health Researcher & Lecturer</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background-color: var(--secondary-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 600;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: white !important;
+            transform: translateY(-2px);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+            color: var(--secondary-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        /* Updated Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.3), rgba(52, 152, 219, 0.6)), 
+                        url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 3.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .hero p.lead {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-radius: 30px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline-light {
+            border-radius: 30px;
+            padding: 12px 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .gallery-item {
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 330px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Rest of your existing CSS remains the same */
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 10px 10px 0 0 !important;
+            font-weight: 600;
+        }
+        
+        .skill-item {
+            margin-bottom: 15px;
+        }
+        
+        .skill-name {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .progress {
+            height: 8px;
+            border-radius: 4px;
+        }
+        
+        .progress-bar {
+            background-color: var(--primary-color);
+        }
+        
+        .publication-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+        
+        .bg-light {
+            background-color: #f8f9fa !important;
+        }
+        
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        
+        .contact-info i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .research-highlight {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 3px solid white;
+        }
+        
+        .award-badge {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p.lead {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Zinabu Bekele Tadese</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#research">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Zinabu Bekele Tadese</h1>
+            <p class="lead">Lecturer & Public Health Researcher | Health Informatics & Machine Learning Specialist</p>
+            <div class="mt-4">
+                <a href="#research" class="btn btn-primary btn-lg me-3">View My Research</a>
+                <a href="#contact" class="btn btn-outline-light btn-lg">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <img src="https://raw.githubusercontent.com/zinabu-b/zinabu-b.github.io/main/about.JPG" 
+     alt="Zinabu Bekele Tadese"
+     class="img-fluid rounded-circle shadow">
+                </div>
+                <div class="col-lg-8">
+                    <h3>Professional Summary</h3>
+                    <p>I am a lecturer and junior public health researcher passionate in machine learning, deep learning, big data analysis, spatial modeling and risk prediction models with a strong background in Health Informatics.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Principal Investigator for university-level research</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 11+ peer-reviewed publications</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Lecturer in Health Informatics</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Project coordination experience</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Undergraduate research supervision</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Conference presentations</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="research-highlight mt-4">
+                        <h4>Current Research Focus</h4>
+                        <p>Leading a university-level mid-scale research project to develop a machine learning-based prognostic model for preterm birth among pregnant women in Ethiopia's Afar Region hospitals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            Master of Public Health Informatics
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">University of Gondar, Ethiopia</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Nov 2021 - Aug 2023</h6>
+                            <p class="card-text">College of Medicine and Health Science, Institute of Public Health</p>
+                            <p><strong>Thesis Grade:</strong> Excellent</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            Bachelor of Science in Health Informatics
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Mattu University, Ethiopia</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Sep 2017 - Jan 2021</h6>
+                            <p class="card-text">College of Health Science</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-4">
+                <h4 class="text-center mb-4">Awards & Certifications</h4>
+                <div class="text-center">
+                    <span class="award-badge"><i class="fas fa-award text-primary me-2"></i>IBM Data Science Professional (Coursera)</span>
+                    <span class="award-badge"><i class="fas fa-award text-primary me-2"></i>Systematic Review & Meta-analysis (JBI)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Project Coordinator</h4>
+                    <h5>Capacity Building and Mentorship Project (CBMP)</h5>
+                    <p class="text-muted">August 2024 - Present</p>
+                    <ul>
+                        <li>Responsible for monitoring and coordinating Routine health information system implementation and Health System strengthening in 4 woredas of Afar region</li>
+                        <li>Plan and implement specific components of HSS interventions in the region in collaboration with central office</li>
+                        <li>Conduct Information Revolution assessment and provide technical guidance and support to healthcare facilities</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4>Lecturer</h4>
+                    <h5>Department of Health Informatics, Samara University</h5>
+                    <p class="text-muted">August 2023 - Present</p>
+                    <ul>
+                        <li>Teach courses: System Analysis & Design, Health Data Analytics, eHealth and C++</li>
+                        <li>Supervise undergraduate students in their final year research and project development</li>
+                        <li>Coordinate academic activities in the department</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4>Assistant Lecturer</h4>
+                    <h5>Department of Health Informatics, Samara University</h5>
+                    <p class="text-muted">April 2021 - November 2021</p>
+                    <ul>
+                        <li>Delivered courses related to information technology and public health</li>
+                        <li>Assisted Health Informatics students with their final year projects</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research & Publications Section -->
+    <section id="research" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Research & Publications</h2>
+            
+            <div class="card mb-4 shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Featured Publications</h4>
+                </div>
+                <div class="card-body">
+                    <div class="publication-item">
+                        <h5>Exploring machine learning algorithms for predicting fertility preferences among reproductive age women in Nigeria</h5>
+                        <p class="text-muted">Tadese ZB, Nimani TD, Mare KU, Gubena F, Wali IG and Sani J (2025) <em>Front. Digit. Health</em> 6:1495382. doi: 10.3389/fdgth.2024.1495382</p>
+                        <a href="https://doi.org/10.3389/fdgth.2024.1495382" class="btn btn-sm btn-outline-primary" target="_blank">View Publication</a>
+                    </div>
+                    
+                    <div class="publication-item">
+                        <h5>Interpretable prediction of acute respiratory infection disease among under-five children in Ethiopia using ensemble machine learning and Shapley additive explanations (SHAP)</h5>
+                        <p class="text-muted">Tadese ZB, Hailu DT, Abebe AW, et al. <em>DIGITAL HEALTH</em>. 2024;10. https://doi.org/10.1177/20552076241272739</p>
+                        <a href="https://doi.org/10.1177/20552076241272739" class="btn btn-sm btn-outline-primary" target="_blank">View Publication</a>
+                    </div>
+                    
+                    <div class="publication-item">
+                        <h5>Prediction of incomplete immunization among under-five children in East Africa from recent demographic and health surveys: a machine learning approach</h5>
+                        <p class="text-muted">Tadese, Z.B., Nigatu, A.M., Yehuala, T.Z. et al. <em>Sci Rep</em> 14, 11529 (2024). https://doi.org/10.1038/s41598-024-62641-8</p>
+                        <a href="https://doi.org/10.1038/s41598-024-62641-8" class="btn btn-sm btn-outline-primary" target="_blank">View Publication</a>
+                    </div>
+                    
+                    <div class="publication-item">
+                        <h5>Trend, geographical distribution, and determinants of modern contraceptive use among married reproductive-age women, based on the 2000, 2005, 2011, and 2016 Ethiopian demographic and health survey</h5>
+                        <p class="text-muted">Nimani, T.D., Tadese, Tadese, Z.B., E.E. et al. <em>BMC Women's Health</em> 23, 629 (2023). https://doi.org/10.1186/s12905-023-02789-z</p>
+                        <a href="https://doi.org/10.1186/s12905-023-02789-z" class="btn btn-sm btn-outline-primary" target="_blank">View Publication</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="https://www.researchgate.net/profile/Zinabu-Tadese/research" class="btn btn-primary" target="_blank">View All Publications (11+)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section (New) -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Event Gallery</h2>
+            <div class="row">
+                <!-- Replace these placeholder images with your actual event photos -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="gallery-item">
+                        <img src="https://raw.githubusercontent.com/zinabu-b/zinabu-b.github.io/main/g1.JPG" alt="Event Participation">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="gallery-item">
+                        <img src="https://raw.githubusercontent.com/zinabu-b/zinabu-b.github.io/main/g5.JPG" alt="Event Participation">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="gallery-item">
+                        <img src="https://raw.githubusercontent.com/zinabu-b/zinabu-b.github.io/main/g6.JPG" alt="Event Participation">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="gallery-item">
+                        <img src="https://raw.githubusercontent.com/zinabu-b/zinabu-b.github.io/main/g2.JPG" alt="Event Participation">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="gallery-item">
+                        <img src="https://raw.githubusercontent.com/zinabu-b/zinabu-b.github.io/main/g8.JPG" alt="Event Participation">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="gallery-item">
+                        <img src="https://raw.githubusercontent.com/zinabu-b/zinabu-b.github.io/main/g7.JPG" alt="Event Participation">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="gallery-item">
+                        <img src="https://raw.githubusercontent.com/zinabu-b/zinabu-b.github.io/main/g3.JPG" alt="Event Participation">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="gallery-item">
+                        <img src="https://raw.githubusercontent.com/zinabu-b/zinabu-b.github.io/main/g4.JPG" alt="Event Participation">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Research Projects</h2>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0">Machine Learning-Based Prognostic Model for Preterm Birth</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Principal Investigator</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Afar Region Hospitals, Ethiopia</h6>
+                            <p class="card-text">Leading a university-level mid-scale research project to develop a machine learning-based prognostic model for preterm birth among pregnant women in Ethiopia's Afar Region hospitals.</p>
+                            <ul>
+                                <li>Utilizes Python (TensorFlow, scikit-learn) for model development</li>
+                                <li>Focuses on improving early intervention in low-resource settings</li>
+                                <li>Incorporates clinical datasets from regional hospitals</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0">CBMP</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <p class="card-text">
+
+The Capacity Building and Mentorship Program
+The Capacity Building and Mentorship Program (CBMP) is a collaborative initiative established in 2017 involving the Ministry of Health (MoH), six local universities and regional health bureaus. Its primary aim is to offer technical support to the Ministry of Health and regional health bureaus on health information systems, digital health, and evidence generation for various health programs. The partnership is funded by the Bill and Melinda Gates Foundation, the Ministry of Health, USAID through DHA, and other contributors.</p>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0">Technical Skills</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="skill-item">
+                                <div class="skill-name">Machine Learning (Python)</div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-name">Statistical Analysis (STATA, SPSS)</div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-name">GIS (ARGis Pro)</div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-name">Programming (C++, HTML/CSS)</div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-name">Database Management (MySQL, PHP)</div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0">Professional Skills</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="skill-item">
+                                <div class="skill-name">Research Methodology</div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-name">Project Management</div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-name">Teaching & Mentoring</div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-name">Team Leadership</div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-name">Multilingual Communication</div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Languages</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="skill-item">
+                                <div class="skill-name">English</div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="skill-item">
+                                <div class="skill-name">Afan Oromo</div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="skill-item">
+                                <div class="skill-name">Amharic</div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="row">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <div class="contact-info">
+                        <h4>Get In Touch</h4>
+                        <p>Feel free to reach out for collaborations, research opportunities, or any inquiries.</p>
+                        
+                        <div class="mb-3">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:zinabubekele@su.edu.et">zinabubekele@su.edu.et</a>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+251923663565">+251-923-663565</a>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Samara University, Ethiopia</span>
+                        </div>
+                        
+                        <div class="social-links mt-4">
+                            <a href="https://www.linkedin.com/in/zinabubekele12/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://orcid.org/0009-0003-4655-2185" target="_blank"><i class="fab fa-orcid"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank"><i class="fas fa-globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2024 Zinabu Bekele Tadese. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Update active class in navigation
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // Update active class on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 300) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
