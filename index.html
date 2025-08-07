@@ -9,52 +9,103 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --accent-color: #f72585;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --text-color: #2b2d42;
+            --text-light: #8d99ae;
+            --gradient-primary: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
         }
         
         body {
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
-            color: #333;
-            line-height: 1.6;
+            color: var(--text-color);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
         }
         
+        /* Animated Navbar */
         .navbar {
-            background-color: var(--secondary-color);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(58, 12, 163, 0.95);
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            padding: 15px 0;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: rgba(58, 12, 163, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
         }
         
         .navbar-brand {
-            font-weight: 600;
+            font-weight: 700;
             color: white !important;
+            font-size: 1.5rem;
         }
         
         .nav-link {
-            color: rgba(255, 255, 255, 0.8) !important;
+            color: rgba(255, 255, 255, 0.85) !important;
             font-weight: 500;
-            margin: 0 10px;
+            margin: 0 12px;
             transition: all 0.3s ease;
+            position: relative;
         }
         
         .nav-link:hover, .nav-link.active {
             color: white !important;
             transform: translateY(-2px);
         }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after, .nav-link.active:after {
+            width: 100%;
+        }
         
         section {
-            padding: 80px 0;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            z-index: -1;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
         }
         
         .section-title {
             position: relative;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             text-align: center;
             color: var(--secondary-color);
         }
@@ -62,241 +113,802 @@
         .section-title:after {
             content: '';
             position: absolute;
-            bottom: -15px;
+            bottom: -20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
         }
-        
-        /* Updated Hero Section */
+
+        /* Hero Section with Parallax Effect */
         .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.3), rgba(52, 152, 219, 0.6)), 
+            background: linear-gradient(rgba(58, 12, 163, 0.3), rgba(67, 97, 238, 0.7)), 
                         url('ggg.jpg');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             color: white;
-            padding: 150px 0;
+            padding: 180px 0;
             text-align: center;
             position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            opacity: 0.2;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero:after {
+            content: '';
+            position: absolute;
+            top: 100px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+            animation-delay: 1s;
         }
         
         .hero h1 {
             font-weight: 700;
-            margin-bottom: 20px;
-            font-size: 3.5rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            margin-bottom: 25px;
+            font-size: 3.8rem;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease;
         }
         
         .hero p.lead {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             max-width: 700px;
-            margin: 0 auto 30px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            margin: 0 auto 40px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero-buttons {
+            animation: fadeIn 1s ease 0.6s both;
         }
         
         .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 12px 30px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border-radius: 30px;
+            background: var(--gradient-primary);
+            border: none;
+            padding: 14px 35px;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-primary:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, #3a0ca3 0%, #4361ee 100%);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn-primary:hover:before {
+            width: 100%;
         }
         
         .btn-primary:hover {
-            background-color: #2980b9;
-            border-color: #2980b9;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(67, 97, 238, 0.4);
         }
         
         .btn-outline-light {
-            border-radius: 30px;
-            padding: 12px 30px;
-            transition: all 0.3s ease;
+            border-radius: 50px;
+            padding: 14px 35px;
+            transition: all 0.4s ease;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
         }
         
         .btn-outline-light:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* About Section */
+        .about-img {
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: all 0.5s ease;
+            border: 5px solid white;
+        }
+
+        .about-img:hover {
+            transform: perspective(1000px) rotateY(0deg);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .about-content {
+            padding-left: 30px;
+        }
+
+        .about-list i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        .about-list li {
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+            padding-left: 5px;
+        }
+
+        .about-list li:hover {
+            transform: translateX(5px);
         }
         
+        .research-highlight {
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+            margin: 40px 0;
+            background-color: rgba(247, 37, 133, 0.05);
+            border-radius: 0 8px 8px 0;
+            transition: all 0.3s ease;
+        }
+
+        .research-highlight:hover {
+            background-color: rgba(247, 37, 133, 0.1);
+            box-shadow: 5px 5px 20px rgba(0,0,0,0.05);
+        }
+
+        /* Education Section */
+        .education-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            margin-bottom: 25px;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        .education-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .education-card:hover:before {
+            opacity: 0.05;
+        }
+
+        .education-card:hover .card-header {
+            background: var(--gradient-primary);
+        }
+        
+        .education-card .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            padding: 20px;
+        }
+
+        .education-card .card-body {
+            padding: 25px;
+        }
+
+        .award-badge {
+            background-color: white;
+            color: var(--secondary-color);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(67, 97, 238, 0.2);
+        }
+
+        .award-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(67, 97, 238, 0.15);
+        }
+
+        .award-badge i {
+            color: var(--accent-color);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -43px;
+            top: 35px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            border: 5px solid white;
+            box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.2);
+        }
+
+        .timeline-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-item h5 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-item .text-muted {
+            color: var(--text-light) !important;
+        }
+
+        .timeline-item ul {
+            padding-left: 20px;
+        }
+
+        .timeline-item ul li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .timeline-item ul li:before {
+            content: '▹';
+            position: absolute;
+            left: -20px;
+            color: var(--accent-color);
+        }
+
+        /* Research & Publications */
+        .publication-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .publication-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .publication-card .card-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 20px;
+            border-radius: 15px 15px 0 0 !important;
+        }
+
+        .publication-item {
+            padding: 25px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .publication-item:hover {
+            background-color: rgba(67, 97, 238, 0.03);
+        }
+
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+
+        .publication-item h5 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .publication-item .text-muted {
+            color: var(--text-light) !important;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .btn-outline-primary {
+            border-radius: 50px;
+            padding: 8px 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-width: 2px;
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--gradient-primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(67, 97, 238, 0.2);
+        }
+
         /* Gallery Section */
         .gallery {
-            padding: 80px 0;
-            background-color: #f8f9fa;
+            padding: 100px 0;
+            background-color: var(--light-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery:before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background-color: var(--accent-color);
+            opacity: 0.1;
+            border-radius: 50%;
+            animation: pulse 8s infinite;
+        }
+
+        .gallery:after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background-color: var(--primary-color);
+            opacity: 0.1;
+            border-radius: 50%;
+            animation: pulse 6s infinite 2s;
         }
         
         .gallery-item {
             margin-bottom: 30px;
             overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            height: 330px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 280px;
+            position: relative;
+        }
+
+        .gallery-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(58, 12, 163, 0.7), transparent);
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 1;
         }
         
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: all 0.5s ease;
         }
         
         .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
         
         .gallery-item:hover img {
             transform: scale(1.1);
         }
-        
-        /* Rest of your existing CSS remains the same */
-        .card {
+
+        .gallery-item:hover:before {
+            opacity: 1;
+        }
+
+        /* Projects Section */
+        .project-card {
             border: none;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            margin-bottom: 25px;
             height: 100%;
+            overflow: hidden;
+            position: relative;
         }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+        .project-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: -1;
         }
-        
-        .card-header {
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .project-card:hover:before {
+            opacity: 0.05;
+        }
+
+        .project-card:hover .card-header {
+            background: var(--gradient-primary);
+        }
+
+        .project-card .card-header {
             background-color: var(--primary-color);
             color: white;
-            border-radius: 10px 10px 0 0 !important;
+            border-radius: 15px 15px 0 0 !important;
             font-weight: 600;
+            transition: all 0.4s ease;
+            padding: 20px;
         }
-        
+
+        .project-card .card-body {
+            padding: 25px;
+        }
+
+        .project-card ul {
+            padding-left: 20px;
+        }
+
+        .project-card ul li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .project-card ul li:before {
+            content: '▹';
+            position: absolute;
+            left: -20px;
+            color: var(--accent-color);
+        }
+
+        /* Skills Section */
+        .skills-section {
+            padding: 100px 0;
+            background-color: var(--light-color);
+            position: relative;
+        }
+
+        .skill-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            margin-bottom: 25px;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .skill-card .card-header {
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+            font-weight: 600;
+            padding: 20px;
+        }
+
+        .skill-card .card-body {
+            padding: 25px;
+        }
+
         .skill-item {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
-        
+
         .skill-name {
             font-weight: 500;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
         }
-        
+
         .progress {
-            height: 8px;
-            border-radius: 4px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: rgba(67, 97, 238, 0.1);
         }
-        
+
         .progress-bar {
+            background: var(--gradient-primary);
+            border-radius: 5px;
+            transition: width 1.5s ease;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section:before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
             background-color: var(--primary-color);
+            opacity: 0.1;
+            border-radius: 50%;
+            animation: pulse 8s infinite;
         }
-        
-        .publication-item {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .publication-item:last-child {
-            border-bottom: none;
-        }
-        
-        .bg-light {
-            background-color: #f8f9fa !important;
-        }
-        
+
         .contact-info {
             margin-bottom: 30px;
         }
-        
+
         .contact-info i {
             color: var(--primary-color);
-            margin-right: 10px;
-            font-size: 1.2rem;
+            margin-right: 15px;
+            font-size: 1.3rem;
+            width: 30px;
+            text-align: center;
         }
-        
+
+        .contact-info a {
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
         .social-links a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary-color);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-primary);
             color: white;
             border-radius: 50%;
             text-align: center;
-            line-height: 40px;
-            margin-right: 10px;
+            margin-right: 15px;
+            transition: all 0.4s ease;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.2);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(67, 97, 238, 0.3);
+            background: var(--secondary-color);
+        }
+
+        .contact-form .form-control {
+            border-radius: 10px;
+            padding: 12px 15px;
+            border: 1px solid rgba(0,0,0,0.1);
             transition: all 0.3s ease;
         }
-        
-        .social-links a:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+        .contact-form .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.1);
         }
-        
-        .research-highlight {
-            border-left: 4px solid var(--primary-color);
-            padding-left: 15px;
-            margin-bottom: 30px;
-        }
-        
-        .timeline {
+
+        /* Footer */
+        footer {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 30px 0;
             position: relative;
-            padding-left: 30px;
         }
-        
-        .timeline:before {
+
+        footer:before {
             content: '';
             position: absolute;
-            left: 0;
             top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: var(--primary-color);
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z"></path></svg>');
+            background-size: cover;
+            opacity: 0.2;
         }
-        
-        .timeline-item {
+
+        footer p {
+            margin: 0;
             position: relative;
-            margin-bottom: 30px;
+            z-index: 1;
         }
-        
-        .timeline-item:before {
-            content: '';
-            position: absolute;
-            left: -38px;
-            top: 5px;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            border: 3px solid white;
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
-        
-        .award-badge {
-            background-color: var(--light-color);
-            color: var(--dark-color);
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            display: inline-block;
-            margin-right: 10px;
-            margin-bottom: 10px;
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
         }
-        
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            section {
+                padding: 80px 0;
+            }
+
+            .hero {
+                padding: 150px 0;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p.lead {
+                font-size: 1.3rem;
+            }
+
+            .about-img {
+                margin-bottom: 30px;
+                transform: none;
+            }
+
+            .about-content {
+                padding-left: 0;
+            }
+        }
+
         @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding: 120px 0;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+
             .hero p.lead {
                 font-size: 1.1rem;
             }
-            
-            section {
-                padding: 60px 0;
+
+            .section-title {
+                margin-bottom: 40px;
+            }
+
+            .section-title:after {
+                bottom: -15px;
+                width: 70px;
+            }
+
+            .btn-primary, .btn-outline-light {
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-buttons .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .hero-buttons .btn:last-child {
+                margin-bottom: 0;
+            }
+
+            .timeline {
+                padding-left: 30px;
+            }
+
+            .timeline-item:before {
+                left: -33px;
+                top: 25px;
+                width: 16px;
+                height: 16px;
             }
         }
     </style>
@@ -343,9 +955,9 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <h1>Zinabu Bekele Tadese</h1>
-            <p class="lead">Lecturer & Public Health Researcher | Health Informatics & Machine Learning Specialist</p>
-            <div class="mt-4">
+            <h1 class="floating animate__animated animate__fadeInDown">Zinabu Bekele Tadese</h1>
+            <p class="lead animate__animated animate__fadeInUp">Lecturer & Public Health Researcher | Health Informatics & Machine Learning Specialist</p>
+            <div class="mt-4 hero-buttons animate__animated animate__fadeIn">
                 <a href="#research" class="btn btn-primary btn-lg me-3">View My Research</a>
                 <a href="#contact" class="btn btn-outline-light btn-lg">Contact Me</a>
             </div>
@@ -354,38 +966,35 @@
 
     <!-- About Section -->
     <section id="about" class="py-5">
+        <div class="section-bg" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\"><path fill=\"%234361ee\" d=\"M0,0 L100,0 L100,100 L0,100 Z\"></path></svg>');"></div>
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title reveal">About Me</h2>
             <div class="row align-items-center">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="about.JPG" 
-     alt="Zinabu Bekele Tadese"
-     class="img-fluid rounded-circle shadow">
+                <div class="col-lg-4 mb-4 mb-lg-0 reveal">
+                    <img src="about.JPG" alt="Zinabu Bekele Tadese" class="img-fluid about-img">
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-8 reveal" style="transition-delay: 0.2s;">
                     <h3>Professional Summary</h3>
-                    <p>I am a lecturer and junior public health researcher passionate in machine learning, deep learning, big data analysis, spatial modeling and risk prediction models with a strong background in Health Informatics.</p>
-                    
+                    <p>I am a lecturer and public health researcher with a passion for machine learning, deep learning, big data analysis, spatial modeling, and risk prediction models, backed by a strong foundation in Health Informatics.</p>
                     <div class="row mt-4">
                         <div class="col-md-6">
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Principal Investigator for university-level research</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 11+ peer-reviewed publications</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Lecturer in Health Informatics</li>
+                            <ul class="list-unstyled about-list">
+                                <li class="mb-2"><i class="fas fa-check"></i> Principal Investigator for university-level research</li>
+                                <li class="mb-2"><i class="fas fa-check"></i> 11+ peer-reviewed publications</li>
+                                <li class="mb-2"><i class="fas fa-check"></i> Lecturer in Health Informatics</li>
                             </ul>
                         </div>
                         <div class="col-md-6">
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Project coordination experience</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Undergraduate research supervision</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Conference presentations</li>
+                            <ul class="list-unstyled about-list">
+                                <li class="mb-2"><i class="fas fa-check"></i> Project coordination experience</li>
+                                <li class="mb-2"><i class="fas fa-check"></i> Undergraduate research supervision</li>
+                                <li class="mb-2"><i class="fas fa-check"></i> Conference presentations</li>
                             </ul>
                         </div>
                     </div>
-                    
                     <div class="research-highlight mt-4">
                         <h4>Current Research Focus</h4>
-                        <p>Leading a university-level mid-scale research project to develop a machine learning-based prognostic model for preterm birth among pregnant women in Ethiopia's Afar Region hospitals.</p>
+                        <p>I am currently leading a university-level mid-scale research project aimed at developing a machine learning-based prognostic model for preterm birth among pregnant women in hospitals within Ethiopia's Afar Region.</p>
                     </div>
                 </div>
             </div>
@@ -395,10 +1004,10 @@
     <!-- Education Section -->
     <section id="education" class="py-5 bg-light">
         <div class="container">
-            <h2 class="section-title">Education</h2>
+            <h2 class="section-title reveal">Education</h2>
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="card">
+                <div class="col-lg-6 reveal">
+                    <div class="card education-card">
                         <div class="card-header">
                             Master of Public Health Informatics
                         </div>
@@ -410,8 +1019,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card">
+                <div class="col-lg-6 reveal" style="transition-delay: 0.2s;">
+                    <div class="card education-card">
                         <div class="card-header">
                             Bachelor of Science in Health Informatics
                         </div>
@@ -424,11 +1033,11 @@
                 </div>
             </div>
             
-            <div class="mt-4">
+            <div class="mt-5 reveal" style="transition-delay: 0.4s;">
                 <h4 class="text-center mb-4">Awards & Certifications</h4>
                 <div class="text-center">
-                    <span class="award-badge"><i class="fas fa-award text-primary me-2"></i>IBM Data Science Professional (Coursera)</span>
-                    <span class="award-badge"><i class="fas fa-award text-primary me-2"></i>Systematic Review & Meta-analysis (JBI)</span>
+                    <span class="award-badge"><i class="fas fa-award me-2"></i>IBM Data Science Professional (Coursera)</span>
+                    <span class="award-badge"><i class="fas fa-award me-2"></i>Systematic Review & Meta-analysis (JBI)</span>
                 </div>
             </div>
         </div>
@@ -437,9 +1046,9 @@
     <!-- Experience Section -->
     <section id="experience" class="py-5">
         <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
+            <h2 class="section-title reveal">Professional Experience</h2>
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item reveal">
                     <h4>Project Coordinator</h4>
                     <h5>Capacity Building and Mentorship Project (CBMP)</h5>
                     <p class="text-muted">August 2024 - Present</p>
@@ -450,7 +1059,7 @@
                     </ul>
                 </div>
                 
-                <div class="timeline-item">
+                <div class="timeline-item reveal" style="transition-delay: 0.2s;">
                     <h4>Lecturer</h4>
                     <h5>Department of Health Informatics, Samara University</h5>
                     <p class="text-muted">August 2023 - Present</p>
@@ -461,7 +1070,7 @@
                     </ul>
                 </div>
                 
-                <div class="timeline-item">
+                <div class="timeline-item reveal" style="transition-delay: 0.4s;">
                     <h4>Assistant Lecturer</h4>
                     <h5>Department of Health Informatics, Samara University</h5>
                     <p class="text-muted">April 2021 - November 2021</p>
@@ -477,10 +1086,10 @@
     <!-- Research & Publications Section -->
     <section id="research" class="py-5 bg-light">
         <div class="container">
-            <h2 class="section-title">Research & Publications</h2>
+            <h2 class="section-title reveal">Research & Publications</h2>
             
-            <div class="card mb-4 shadow">
-                <div class="card-header bg-primary text-white">
+            <div class="card mb-4 shadow publication-card reveal">
+                <div class="card-header">
                     <h4 class="mb-0">Featured Publications</h4>
                 </div>
                 <div class="card-body">
@@ -516,54 +1125,54 @@
                 </div>
             </div>
             
-            <div class="text-center mt-4">
+            <div class="text-center mt-4 reveal">
                 <a href="https://www.researchgate.net/profile/Zinabu-Tadese/research" class="btn btn-primary" target="_blank">View All Publications (11+)</a>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section (New) -->
+    <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <div class="container">
-            <h2 class="section-title">Event Gallery</h2>
+            <h2 class="section-title reveal">Event Gallery</h2>
             <div class="row">
                 <!-- Replace these placeholder images with your actual event photos -->
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3 reveal">
                     <div class="gallery-item">
                         <img src="g1.jpg" alt="Event Participation">
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3 reveal" style="transition-delay: 0.1s;">
                     <div class="gallery-item">
                         <img src="g5.JPG" alt="Event Participation">
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3 reveal" style="transition-delay: 0.2s;">
                     <div class="gallery-item">
                         <img src="g6.png" alt="Event Participation">
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3 reveal" style="transition-delay: 0.3s;">
                     <div class="gallery-item">
                         <img src="g2.jpg" alt="Event Participation">
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3 reveal" style="transition-delay: 0.4s;">
                     <div class="gallery-item">
                         <img src="g8.jpg" alt="Event Participation">
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3 reveal" style="transition-delay: 0.5s;">
                     <div class="gallery-item">
                         <img src="g7.jpg" alt="Event Participation">
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3 reveal" style="transition-delay: 0.6s;">
                     <div class="gallery-item">
                         <img src="g3.jpg" alt="Event Participation">
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3 reveal" style="transition-delay: 0.7s;">
                     <div class="gallery-item">
                         <img src="g4.jpg" alt="Event Participation">
                     </div>
@@ -575,12 +1184,12 @@
     <!-- Projects Section -->
     <section id="projects" class="py-5">
         <div class="container">
-            <h2 class="section-title">Research Projects</h2>
+            <h2 class="section-title reveal">Research Projects</h2>
             
             <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-primary text-white">
+                <div class="col-lg-6 mb-4 reveal">
+                    <div class="card project-card h-100">
+                        <div class="card-header">
                             <h4 class="mb-0">Machine Learning-Based Prognostic Model for Preterm Birth</h4>
                         </div>
                         <div class="card-body">
@@ -596,15 +1205,14 @@
                     </div>
                 </div>
                 
-                <div class="col-lg-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-primary text-white">
+                <div class="col-lg-6 mb-4 reveal" style="transition-delay: 0.2s;">
+                    <div class="card project-card h-100">
+                        <div class="card-header">
                             <h4 class="mb-0">CBMP</h4>
                         </div>
                         <div class="card-body">
                             <ul>
                                 <p class="card-text">
-
 The Capacity Building and Mentorship Program
 The Capacity Building and Mentorship Program (CBMP) is a collaborative initiative established in 2017 involving the Ministry of Health (MoH), six local universities and regional health bureaus. Its primary aim is to offer technical support to the Ministry of Health and regional health bureaus on health information systems, digital health, and evidence generation for various health programs. The partnership is funded by the Bill and Melinda Gates Foundation, the Ministry of Health, USAID through DHA, and other contributors.</p>
                             </ul>
@@ -618,12 +1226,12 @@ The Capacity Building and Mentorship Program (CBMP) is a collaborative initiativ
     <!-- Skills Section -->
     <section id="skills" class="py-5 bg-light">
         <div class="container">
-            <h2 class="section-title">Skills</h2>
+            <h2 class="section-title reveal">Skills</h2>
             
             <div class="row">
-                <div class="col-md-6">
-                    <div class="card mb-4">
-                        <div class="card-header bg-primary text-white">
+                <div class="col-md-6 reveal">
+                    <div class="card skill-card mb-4">
+                        <div class="card-header">
                             <h4 class="mb-0">Technical Skills</h4>
                         </div>
                         <div class="card-body">
@@ -665,9 +1273,9 @@ The Capacity Building and Mentorship Program (CBMP) is a collaborative initiativ
                     </div>
                 </div>
                 
-                <div class="col-md-6">
-                    <div class="card mb-4">
-                        <div class="card-header bg-primary text-white">
+                <div class="col-md-6 reveal" style="transition-delay: 0.2s;">
+                    <div class="card skill-card mb-4">
+                        <div class="card-header">
                             <h4 class="mb-0">Professional Skills</h4>
                         </div>
                         <div class="card-body">
@@ -710,8 +1318,8 @@ The Capacity Building and Mentorship Program (CBMP) is a collaborative initiativ
                 </div>
             </div>
             
-            <div class="card">
-                <div class="card-header bg-primary text-white">
+            <div class="card skill-card reveal" style="transition-delay: 0.4s;">
+                <div class="card-header">
                     <h4 class="mb-0">Languages</h4>
                 </div>
                 <div class="card-body">
@@ -747,26 +1355,26 @@ The Capacity Building and Mentorship Program (CBMP) is a collaborative initiativ
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-5">
+    <section id="contact" class="py-5 contact-section">
         <div class="container">
-            <h2 class="section-title">Contact Me</h2>
+            <h2 class="section-title reveal">Contact Me</h2>
             <div class="row">
-                <div class="col-lg-5 mb-4 mb-lg-0">
+                <div class="col-lg-5 mb-4 mb-lg-0 reveal">
                     <div class="contact-info">
                         <h4>Get In Touch</h4>
                         <p>Feel free to reach out for collaborations, research opportunities, or any inquiries.</p>
                         
-                        <div class="mb-3">
+                        <div class="mb-3 d-flex align-items-center">
                             <i class="fas fa-envelope"></i>
                             <a href="mailto:zinabubekele@su.edu.et">zinabubekele@su.edu.et</a>
                         </div>
                         
-                        <div class="mb-3">
+                        <div class="mb-3 d-flex align-items-center">
                             <i class="fas fa-phone"></i>
                             <a href="tel:+251923663565">+251-923-663565</a>
                         </div>
                         
-                        <div class="mb-3">
+                        <div class="mb-3 d-flex align-items-center">
                             <i class="fas fa-map-marker-alt"></i>
                             <span>Samara University, Ethiopia</span>
                         </div>
@@ -780,8 +1388,8 @@ The Capacity Building and Mentorship Program (CBMP) is a collaborative initiativ
                     </div>
                 </div>
                 
-                <div class="col-lg-7">
-                    <form>
+                <div class="col-lg-7 reveal" style="transition-delay: 0.2s;">
+                    <form class="contact-form">
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="name" class="form-label">Name</label>
@@ -811,7 +1419,7 @@ The Capacity Building and Mentorship Program (CBMP) is a collaborative initiativ
     </section>
 
     <!-- Footer -->
-    <footer class="py-4 bg-dark text-white text-center">
+    <footer class="py-4">
         <div class="container">
             <p class="mb-0">&copy; 2024 Zinabu Bekele Tadese. All rights reserved.</p>
         </div>
@@ -820,6 +1428,16 @@ The Capacity Building and Mentorship Program (CBMP) is a collaborative initiativ
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -858,6 +1476,46 @@ The Capacity Building and Mentorship Program (CBMP) is a collaborative initiativ
                 }
             });
         });
+
+        // Scroll reveal animation
+        function scrollReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const revealTop = reveals[i].getBoundingClientRect().top;
+                const revealPoint = 150;
+                
+                if (revealTop < windowHeight - revealPoint) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', scrollReveal);
+        window.addEventListener('load', scrollReveal);
+
+        // Animate progress bars when they come into view
+        function animateProgressBars() {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            
+            progressBars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                const isVisible = (rect.top <= window.innerHeight) && (rect.bottom >= 0);
+                
+                if (isVisible && !bar.classList.contains('animated')) {
+                    bar.classList.add('animated');
+                    const width = bar.style.width;
+                    bar.style.width = '0';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateProgressBars);
+        window.addEventListener('load', animateProgressBars);
     </script>
 </body>
 </html>
