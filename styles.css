@@ -30,7 +30,7 @@ body {
 
 /* Hero Section */
  .hero {
-    background-image: url('ggg.jpg'); /* Replace with your actual image path */
+    background-image: url('https://github.com/zinabu-b/zinabu-b.github.io/blob/main/ggg.jpg'); /* Replace with your actual image path */
     background-size: cover;
     background-position: center;
     min-height: 100vh;
