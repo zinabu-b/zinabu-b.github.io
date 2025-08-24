@@ -8,41 +8,102 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         
         if (targetElement) {
             window.scrollTo({
-                top: targetElement.offsetTop,
+                top: targetElement.offsetTop - 80, // Adjust for fixed header
                 behavior: 'smooth'
             });
+            
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu && mobileMenu.classList.contains('open')) {
+                mobileMenu.classList.remove('open');
+            }
         }
     });
 });
 
 // Mobile menu toggle
-const mobileMenuButton = document.querySelector('.md:hidden');
-const navLinks = document.querySelector('.md:flex');
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
 
-if (mobileMenuButton && navLinks) {
+if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener('click', () => {
-        navLinks.classList.toggle('hidden');
+        mobileMenu.classList.toggle('open');
     });
 }
 
+// Hero section slideshow
+function initHeroSlideshow() {
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+    
+    if (slides.length === 0) return;
+    
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
+    }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+    
+    // Change slide every 5 seconds
+    setInterval(nextSlide, 5000);
+}
+
 // Intersection Observer for section animations
-const observerOptions = {
-    threshold: 0.1
-};
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-        }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('section-visible');
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections with animation class
+    document.querySelectorAll('.section-animate').forEach(section => {
+        observer.observe(section);
     });
-}, observerOptions);
+}
 
-// Observe all sections
-document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = 0;
-    section.style.transform = 'translateY(20px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(section);
+// Animate skill bars when they come into view
+function initSkillBarAnimations() {
+    const observerOptions = {
+        threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const skillBars = entry.target.querySelectorAll('.skill-bar-fill');
+                skillBars.forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                });
+            }
+        });
+    }, observerOptions);
+
+    // Observe skills section
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection) {
+        observer.observe(skillsSection);
+    }
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initHeroSlideshow();
+    initScrollAnimations();
+    initSkillBarAnimations();
 });
