@@ -27,7 +27,7 @@
     background-position: center;
 }
 .hero-slide.active {
-    opacity: 0.6; /* Adjusted for network background visibility */
+    opacity: 2.5; /* Adjusted for network background visibility */
 }
 /* Network Background */
 #network-background {
@@ -36,9 +36,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Behind slideshow and content */
-    /* Optional: Adjust opacity if needed */
-    /* opacity: 0.8; */
+    z-index: 1;
 }
 #network-background canvas {
     display: block;
