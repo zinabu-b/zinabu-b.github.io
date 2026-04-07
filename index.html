@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zinabu Bekele Tadesse | Public Health Researcher</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-purple-700 text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="text-xl font-bold">Zinabu Bekele Tadese</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-purple-200 transition duration-300">Home</a>
+                <a href="#about" class="hover:text-purple-200 transition duration-300">About</a>
+                <a href="#education" class="hover:text-purple-200 transition duration-300">Education</a>
+                <a href="#experience" class="hover:text-purple-200 transition duration-300">Experience</a>
+                <a href="#research" class="hover:text-purple-200 transition duration-300">Research</a>
+                <a href="#projects" class="hover:text-purple-200 transition duration-300">Projects</a>
+                <a href="#skills" class="hover:text-purple-200 transition duration-300">Skills</a>
+                <a href="#contact" class="hover:text-purple-200 transition duration-300">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-purple-800">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="#home" class="hover:text-purple-200 transition duration-300">Home</a>
+                <a href="#about" class="hover:text-purple-200 transition duration-300">About</a>
+                <a href="#education" class="hover:text-purple-200 transition duration-300">Education</a>
+                <a href="#experience" class="hover:text-purple-200 transition duration-300">Experience</a>
+                <a href="#research" class="hover:text-purple-200 transition duration-300">Research</a>
+                <a href="#projects" class="hover:text-purple-200 transition duration-300">Projects</a>
+                <a href="#skills" class="hover:text-purple-200 transition duration-300">Skills</a>
+                <a href="#contact" class="hover:text-purple-200 transition duration-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Network Background Container -->
+        <div id="network-background"></div>
+        <div class="hero-slideshow">
+            <div class="hero-slide active" style="background-image: url('https://raw.githubusercontent.com/zinabu-b/zinabu-b.github.io/main/background2.png');"></div>
+            <div class="hero-slide" style="background-image: url('https://raw.githubusercontent.com/zinabu-b/zinabu-b.github.io/main/background.png');"></div>
+        </div>
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-4 relative z-10 text-center text-white">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Zinabu Bekele Tadese</h1>
+            <p class="text-lg sm:text-xl md:text-2xl mb-8">Lecturer & Public Health Researcher | Health Informatics & Machine Learning Specialist</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#research" class="bg-white text-purple-700 px-6 sm:px-8 py-3 rounded-lg font-medium flex items-center justify-center hover:bg-purple-100 transition duration-300">
+                    View My Research
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#contact" class="bg-white text-purple-700 px-6 sm:px-8 py-3 rounded-lg font-medium hover:bg-purple-100 transition duration-300">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-20 bg-white section-animate">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-purple-700 text-center mb-8 md:mb-12">About Me</h2>
+            <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+                <div class="md:w-1/3 flex justify-center">
+                    <img src="img/about.png" alt="Zinabu Bekele Tadesse" class="rounded-lg shadow-lg object-cover w-full max-w-[300px] h-auto md:h-[370px]">
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="text-xl md:text-2xl font-bold text-purple-700 mb-4">Professional Summary</h3>
+                    <p class="text-gray-600 mb-6">I am a lecturer and public health researcher with a passion for machine learning, deep learning, big data analysis, spatial modeling, and risk prediction models, backed by a strong foundation in Health Informatics.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-3"></i>
+                            <span>Principal Investigator for university-level research</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-3"></i>
+                            <span>11+ peer-reviewed publications</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-3"></i>
+                            <span>Lecturer in Health Informatics</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-3"></i>
+                            <span>Project coordination experience</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-3"></i>
+                            <span>Undergraduate research supervision</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-3"></i>
+                            <span>Conference presentations</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold text-purple-700 mb-4">Current Research Focus</h3>
+                    <p class="text-gray-600">I am currently leading a university-level mid-scale research project aimed at developing a machine learning-based prognostic model for preterm birth among pregnant women in hospitals within Ethiopia's Afar Region.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Education Section -->
+    <section id="education" class="py-16 md:py-20 bg-gray-50 section-animate">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-purple-700 text-center mb-8 md:mb-12">Education</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-graduation-cap text-purple-600 mr-3"></i>
+                        <span class="text-purple-600 font-medium">Master of Public Health Informatics</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">University of Gondar, Ethiopia</h3>
+                    <p class="text-gray-600 mb-2"><i class="fas fa-calendar-alt mr-2"></i> Nov 2021 - Aug 2023</p>
+                    <p class="text-gray-600 mb-3">College of Medicine and Health Science, Institute of Public Health</p>
+                    <p class="text-purple-600 text-sm"><i class="fas fa-award mr-2"></i> Thesis Grade: Excellent</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-graduation-cap text-purple-600 mr-3"></i>
+                        <span class="text-purple-600 font-medium">Bachelor of Science in Health Informatics</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Mattu University, Ethiopia</h3>
+                    <p class="text-gray-600 mb-2"><i class="fas fa-calendar-alt mr-2"></i> Sep 2017 - Jan 2021</p>
+                    <p class="text-gray-600">College of Health Science</p>
+                </div>
+            </div>
+            <div class="mt-8 md:mt-12 bg-white p-6 rounded-lg shadow-md card-hover">
+                <h3 class="text-2xl font-bold text-purple-700 mb-6 text-center">Awards & Certifications</h3>
+                <div class="flex flex-wrap gap-3 md:gap-4 justify-center">
+<a href="https://github.com/zinabu-b/Hypertension" target="_blank" rel="noopener noreferrer">
+  <div class="bg-purple-600 text-white px-3 py-2 md:px-4 md:py-2 rounded-full flex items-center text-sm hover:bg-purple-700 transition duration-300">
+    <i class="fas fa-medal mr-2"></i>
+    AI in Health Hackathon Winner (Orbit Health)
+  </div>
+</a>
+                    <div class="bg-purple-600 text-white px-3 py-2 md:px-4 md:py-2 rounded-full flex items-center text-sm">
+                        <i class="fas fa-certificate mr-2"></i>
+                        IBM Data Science Professional (Coursera)
+                    </div>
+                    <div class="bg-purple-600 text-white px-3 py-2 md:px-4 md:py-2 rounded-full flex items-center text-sm">
+                        <i class="fas fa-certificate mr-2"></i>
+                        Systematic Review & Meta-analysis (JBI)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 md:py-20 bg-white section-animate">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-purple-700 text-center mb-8 md:mb-12">Professional Experience</h2>
+            <div class="relative">
+                <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-purple-300 hidden md:block"></div>
+                
+                <!-- AI Engineer -->
+                <div class="mb-8 md:mb-12">
+                    <div class="flex items-start">
+                        <div class="absolute left-4 w-8 h-8 md:w-10 md:h-10 rounded-full bg-purple-600 flex items-center justify-center text-white z-10 hidden md:flex">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="ml-0 md:ml-16 bg-white p-6 rounded-lg shadow-md card-hover">
+                            <h3 class="text-xl font-bold text-purple-700 mb-1">AI Engineer</h3>
+                            <p class="text-gray-600 mb-2">eHealth IT Service PLC</p>
+                            <p class="text-gray-500 text-sm mb-3"><i class="fas fa-calendar-alt mr-2"></i> January 2026 - Present</p>
+                            <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                <li>Developing and deploying AI-powered clinical decision support systems to enhance diagnostic accuracy and patient outcome prediction in health facilities.</li>
+                                <li>Designing and implementing machine learning pipelines for health data analysis, enabling intelligent automation of disease surveillance and public health reporting.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Manager -->
+                <div class="mb-8 md:mb-12">
+                    <div class="flex items-start">
+                        <div class="absolute left-4 w-8 h-8 md:w-10 md:h-10 rounded-full bg-purple-600 flex items-center justify-center text-white z-10 hidden md:flex">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="ml-0 md:ml-16 bg-white p-6 rounded-lg shadow-md card-hover">
+                            <h3 class="text-xl font-bold text-purple-700 mb-1">Data Manager</h3>
+                            <p class="text-gray-600 mb-2">dHDDS (Digital Health and Demographic Surveillance System)</p>
+                            <p class="text-gray-500 text-sm mb-3"><i class="fas fa-calendar-alt mr-2"></i> January 2026 - Present</p>
+                            <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                <li>Designing and implementing the data collection system to support efficient, standardized, and scalable HDSS data capture across field sites.</li>
+                                <li>Ensuring the data quality, management, and storage of HDSS data through regular validation, auditing, and secure database maintenance protocols.</li>
+                                <li>Performing data cleaning and preprocessing to ensure datasets are accurate, consistent, and ready for analysis and reporting.</li>
+                                <li>Managing data documentation and metadata to maintain comprehensive records of data sources, definitions, collection methods, and processing workflows.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Coordinator -->
+                <div class="mb-8 md:mb-12">
+                    <div class="flex items-start">
+                        <div class="absolute left-4 w-8 h-8 md:w-10 md:h-10 rounded-full bg-purple-600 flex items-center justify-center text-white z-10 hidden md:flex">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="ml-0 md:ml-16 bg-white p-6 rounded-lg shadow-md card-hover">
+                            <h3 class="text-xl font-bold text-purple-700 mb-1">Project Coordinator</h3>
+                            <p class="text-gray-600 mb-2">Capacity Building and Mentorship Project (CBMP)</p>
+                            <p class="text-gray-500 text-sm mb-3"><i class="fas fa-calendar-alt mr-2"></i> August 2024 - Present <i class="fas fa-map-marker-alt ml-2 mr-2"></i> Afar Region, Ethiopia</p>
+                            <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                <li>Responsible for monitoring and coordinating RHIS implementation and Health System strengthening in 4 woredas of Afar region</li>
+                                <li>Plan and implement specific components of HSS interventions in the region in collaboration with central office</li>
+                                <li>Conduct Information Revolution assessment and provide technical guidance and support to healthcare facilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Samara University Main Section -->
+                <div class="mb-12">
+                    <div class="flex items-start md:ml-16">
+                        <div class="absolute left-4 w-12 h-12 md:w-14 md:h-14 rounded-full bg-purple-600 flex items-center justify-center text-white z-10 hidden md:flex flex-shrink-0">
+                            <i class="fas fa-university text-xl"></i>
+                        </div>
+                        <div class="ml-0 md:ml-0 bg-white p-6 rounded-lg shadow-md card-hover w-full">
+                            <h3 class="text-2xl font-bold text-purple-700 mb-1">Samara University</h3>
+                            <p class="text-gray-600 mb-1"><i class="fas fa-map-marker-alt mr-2"></i>Samara, Ethiopia</p>
+                            <p class="text-gray-500 text-sm mb-6">April 2021 - Present · 4+ years</p>
+
+                            <!-- Subsection Timeline -->
+                            <div class="border-l-2 border-purple-300 pl-6">
+                                <!-- Head Department -->
+                                <div class="mb-8 relative">
+                                    <div class="absolute -left-8 w-4 h-4 rounded-full bg-purple-600 border-4 border-white"></div>
+                                    <h4 class="text-lg font-bold text-purple-700 mb-1">Head Department of Health Informatics</h4>
+                                    <p class="text-gray-600 text-sm font-medium">Full-time</p>
+                                    <p class="text-gray-500 text-sm mb-3"><i class="fas fa-calendar-alt mr-2"></i>October 2025 - Present</p>
+                                    <ul class="list-disc list-inside text-gray-600 space-y-1 text-sm">
+                                        <li>Beside my teaching and community service roles I am Responsible of managing and coordinating department level activities</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Lecturer -->
+                                <div class="mb-8 relative">
+                                    <div class="absolute -left-8 w-4 h-4 rounded-full bg-purple-600 border-4 border-white"></div>
+                                    <h4 class="text-lg font-bold text-purple-700 mb-1">Lecturer</h4>
+                                    <p class="text-gray-600 text-sm font-medium">Full-time</p>
+                                    <p class="text-gray-500 text-sm mb-3"><i class="fas fa-calendar-alt mr-2"></i>August 2023 - Present</p>
+                                    <ul class="list-disc list-inside text-gray-600 space-y-1 text-sm">
+                                        <li>Teach courses: System Analysis & Design, Health Data Analytics, eHealth and C++</li>
+                                        <li>Supervise undergraduate students in their final year research and project development</li>
+                                        <li>Coordinate academic activities in the department</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Assistant Lecturer -->
+                                <div class="relative">
+                                    <div class="absolute -left-8 w-4 h-4 rounded-full bg-purple-600 border-4 border-white"></div>
+                                    <h4 class="text-lg font-bold text-purple-700 mb-1">Assistant Lecturer</h4>
+                                    <p class="text-gray-600 text-sm font-medium">Full-time</p>
+                                    <p class="text-gray-500 text-sm mb-3"><i class="fas fa-calendar-alt mr-2"></i>April 2021 - November 2021</p>
+                                    <ul class="list-disc list-inside text-gray-600 space-y-1 text-sm">
+                                        <li>Delivered courses related to information technology and public health</li>
+                                        <li>Assisted Health Informatics students with their final year projects</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="py-16 md:py-20 bg-gray-50 section-animate">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-purple-700 text-center mb-8 md:mb-12">Research & Publications</h2>
+            <div class="bg-white p-6 rounded-lg shadow-md mb-8 md:mb-12 card-hover">
+                <h3 class="text-2xl font-bold text-purple-700 mb-4 flex items-center">
+                    <i class="fas fa-book mr-3"></i>
+                    Featured Publications
+                </h3>
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-bold text-gray-800">Forecasting tuberculosis in Ethiopia using deep learning: progress toward sustainable development goal evidence from global burden of disease</h4>
+                        <p class="text-gray-600 mt-1">Tadese ZB, Arage, F.G., Tsegaw, T.K. et al. (2025)</p>
+                        <p class="text-gray-500 text-sm">BMC Infect Dis 25, 870 (2025) doi: 10.1186/s12879-025-11228-3</p>
+                    <a href="https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-025-11228-3" 
+                        target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center mt-2 text-purple-600 hover:text-purple-800">
+                        <span>View Publication</span>
+                        <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                    </div>
+                <div>
+                    <h4 class="font-bold text-gray-800">Exploring machine learning algorithms for predicting fertility preferences among reproductive age women in Nigeria</h4>
+                    <p class="text-gray-600 mt-1">Tadese ZB, Nimani TD, Mare KU, Gubena F, Wali IG and Sani J (2025)</p>
+                    <p class="text-gray-500 text-sm">Front. Digit. Health 6:1495382 doi: 10.3389/fdgh.2024.1495382</p>
+                <a href="https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2024.1495382/full" 
+                    target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center mt-2 text-purple-600 hover:text-purple-800">
+                    <span>View Publication</span>
+                    <i class="fas fa-external-link-alt ml-2"></i>
+                </a>
+                </div>
+<div>
+    <h4 class="font-bold text-gray-800">Interpretable prediction of acute respiratory infection disease among under-five children in Ethiopia using ensemble machine learning and Shapley additive explanations (SHAP)</h4>
+    <p class="text-gray-600 mt-1">Tadese ZB, Hailu DT, Abebe AW, et al.</p>
+    <p class="text-gray-500 text-sm">DIGITAL HEALTH, 2024:10 doi: 10.1177/20552076241272739</p>
+    <a href="https://journals.sagepub.com/doi/10.1177/20552076241272739" 
+       target="_blank" rel="noopener noreferrer"
+       class="inline-flex items-center mt-2 text-purple-600 hover:text-purple-800">
+        <span>View Publication</span>
+        <i class="fas fa-external-link-alt ml-2"></i>
+    </a>
+</div>
+<div>
+    <h4 class="font-bold text-gray-800">Prediction of incomplete immunization among under-five children in East Africa from recent demographic and health surveys: a machine learning approach</h4>
+    <p class="text-gray-600 mt-1">Tadese, Z.B., Nigatu, A.M., Yehuala, T.Z. et al.</p>
+    <p class="text-gray-500 text-sm">Sci Rep 14, 11529 (2024) doi: 10.1038/s41598-024-62641-8</p>
+    <a href="https://www.nature.com/articles/s41598-024-62641-8" 
+       target="_blank" rel="noopener noreferrer"
+       class="inline-flex items-center mt-2 text-purple-600 hover:text-purple-800">
+        <span>View Publication</span>
+        <i class="fas fa-external-link-alt ml-2"></i>
+    </a>
+</div>
+<div>
+    <h4 class="font-bold text-gray-800">Cervical cancer screening uptake and its associated factor in Sub-Sharan Africa: a machine learning approach.</h4>
+    <p class="text-gray-600 mt-1">Arage, F.G., Tadese, Z.B., Taye, E.A. et al.</p>
+    <p class="text-gray-500 text-sm">BMC Medical Informatics and Decision Making 25, 127 (2025) doi: 10.1186/s12911-025-03039-y</p>
+    <a href="https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-025-03039-y" 
+       target="_blank" rel="noopener noreferrer"
+       class="inline-flex items-center mt-2 text-purple-600 hover:text-purple-800">
+        <span>View Publication</span>
+        <i class="fas fa-external-link-alt ml-2"></i>
+    </a>
+</div>
+                </div>
+                <div class="text-center mt-8">
+    <a href="https://www.researchgate.net/profile/Zinabu-Tadese/research" 
+       target="_blank" rel="noopener noreferrer"
+       class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition duration-300 inline-flex items-center">
+        View All Publications (11+)
+        <i class="fas fa-external-link-alt ml-2"></i>
+    </a>
+</div>
+            </div>
+            <div class="mb-8 md:mb-12">
+                <h3 class="text-2xl font-bold text-purple-700 text-center mb-6">Event Gallery</h3>
+                <p class="text-gray-600 text-center mb-8">Professional events, conferences, and achievements</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <img src="img/im1.png" alt="Event" class="rounded-lg shadow-md w-full h-48 object-cover">
+                    <img src="img/im2.png" alt="Event" class="rounded-lg shadow-md w-full h-48 object-cover">
+                    <img src="img/im3.png" alt="Event" class="rounded-lg shadow-md w-full h-48 object-cover">
+                    <img src="img/im4.png" alt="Event" class="rounded-lg shadow-md w-full h-48 object-cover">
+                    <img src="img/im5.png" alt="Event" class="rounded-lg shadow-md w-full h-48 object-cover">
+                    <img src="img/im6.png" alt="Event" class="rounded-lg shadow-md w-full h-48 object-cover">
+                    <img src="img/im7.png" alt="Event" class="rounded-lg shadow-md w-full h-48 object-cover">
+                    <img src="img/im8.png" alt="Event" class="rounded-lg shadow-md w-full h-48 object-cover">
+                </div>
+            </div>
+    </div>
+    </section>
+    <section id="projects" class="py-16 md:py-20 bg-gray-50 section-animate">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl md:text-4xl font-bold text-purple-700 text-center mb-8 md:mb-12">Research Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-lightbulb text-purple-600 mr-3"></i>
+                        <span class="text-purple-600 font-medium">Machine Learning-Based Prognostic Model for Preterm Birth</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-user-tie text-purple-600 mr-3"></i>
+                        <span class="text-purple-600 font-medium">Principal Investigator</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-map-marker-alt text-purple-600 mr-3"></i>
+                        <span class="text-purple-600 font-medium">Afar Region Hospitals, Ethiopia</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Leading a university-level mid-scale research project to develop a machine learning-based prognostic model for preterm birth among pregnant women in Ethiopia's Afar Region hospitals.</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Utilizes Python (TensorFlow, scikit-learn) for model development</li>
+                        <li>Focuses on improving early intervention in low-resource settings</li>
+                        <li>Incorporates clinical datasets from regional hospitals</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-lightbulb text-purple-600 mr-3"></i>
+                        <span class="text-purple-600 font-medium">Capacity Building and Mentorship Program (CBMP)</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-user-tie text-purple-600 mr-3"></i>
+                        <span class="text-purple-600 font-medium">Project Coordinator</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-university text-purple-600 mr-3"></i>
+                        <span class="text-purple-600 font-medium">Multi-institutional Collaboration</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">The Capacity Building and Mentorship Program (CBMP) is a collaborative initiative established in 2017 involving the Ministry of Health (MoH), six local universities and regional health bureaus. Its primary aim is to offer technical support to the Ministry of Health and regional health bureaus on health information systems, digital health, and evidence generation for various health programs.</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Funded by Bill and Melinda Gates Foundation, Ministry of Health, USAID through DHA</li>
+                        <li>Technical support on health information systems and digital health</li>
+                        <li>Evidence generation for various health programs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 md:py-20 bg-white section-animate">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-purple-700 text-center mb-8 md:mb-12">Skills & Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <!-- Programming & Development -->
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-bold text-purple-700 mb-4 flex items-center">
+                        <i class="fas fa-code mr-3"></i>
+                        Programming & Development
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Python</span>
+                                <span class="text-gray-500">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar-fill bg-purple-600 h-2 rounded-full" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">HTML/CSS</span>
+                                <span class="text-gray-500">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar-fill bg-purple-600 h-2 rounded-full" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">SQL</span>
+                                <span class="text-gray-500">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar-fill bg-purple-600 h-2 rounded-full" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">JavaScript</span>
+                                <span class="text-gray-500">70%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar-fill bg-purple-600 h-2 rounded-full" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Machine Learning & AI -->
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-bold text-purple-700 mb-4 flex items-center">
+                        <i class="fas fa-brain mr-3"></i>
+                        Machine Learning & AI
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Scikit-learn</span>
+                                <span class="text-gray-500">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar-fill bg-purple-600 h-2 rounded-full" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">TensorFlow</span>
+                                <span class="text-gray-500">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar-fill bg-purple-600 h-2 rounded-full" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Deep Learning</span>
+                                <span class="text-gray-500">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar-fill bg-purple-600 h-2 rounded-full" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">NLP</span>
+                                <span class="text-gray-500">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar-fill bg-purple-600 h-2 rounded-full" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Data Analysis & Visualization -->
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-bold text-purple-700 mb-4 flex items-center">
+                        <i class="fas fa-chart-bar mr-3"></i>
+                        Data Analysis & Visualization
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Pandas/NumPy</span>
+                                <span class="text-gray-500">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar-fill bg-purple-600 h-2 rounded-full" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Matplotlib/Seaborn</span>
+                                <span class="text-gray-500">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar-fill bg-purple-600 h-2 rounded-full" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">STATA</span>
+                                <span class="text-gray-500">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar-fill bg-purple-600 h-2 rounded-full" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">SPSS</span>
+                                <span class="text-gray-500">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar-fill bg-purple-600 h-2 rounded-full" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Health Informatics Tools -->
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-bold text-purple-700 mb-4 flex items-center">
+                        <i class="fas fa-database mr-3"></i>
+                        Health Informatics Tools
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">FHIR</span>
+                                <span class="text-gray-500">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar-fill bg-purple-600 h-2 rounded-full" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">HL7</span>
+                                <span class="text-gray-500">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar-fill bg-purple-600 h-2 rounded-full" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">EHR Systems</span>
+                                <span class="text-gray-500">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar-fill bg-purple-600 h-2 rounded-full" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">GIS/Spatial Analysis</span>
+                                <span class="text-gray-500">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar-fill bg-purple-600 h-2 rounded-full" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-20 bg-gray-50 section-animate">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-purple-700 text-center mb-8 md:mb-12">Contact Me</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-4">Get In Touch</h3>
+                    <p class="text-gray-600 mb-6">Feel free to reach out for collaborations, research opportunities, or any inquiries.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-purple-600 mr-3"></i>
+                            <div>
+                                <p class="text-gray-600">Email</p>
+                                <a href="mailto:zinabubekele@su.edu.et" class="text-purple-600 hover:text-purple-800">zinabubekele@su.edu.et</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-purple-600 mr-3"></i>
+                            <div>
+                                <p class="text-gray-600">Phone</p>
+                                <a href="tel:+251923663565" class="text-purple-600 hover:text-purple-800">+251-923-663565</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-purple-600 mr-3"></i>
+                            <div>
+                                <p class="text-gray-600">Location</p>
+                                <p class="text-gray-800">Samara University, Ethiopia</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://www.linkedin.com/in/zinabubekele12/" class="bg-purple-600 text-white p-3 rounded-full hover:bg-purple-700 transition duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/zinabu-b" class="bg-purple-600 text-white p-3 rounded-full hover:bg-purple-700 transition duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=YRt0jnQAAAAJ&hl=en" class="bg-purple-600 text-white p-3 rounded-full hover:bg-purple-700 transition duration-300">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <a href="https://script.google.com/macros/s/AKfycbzCK8jJRsh2UncHBvuBKJJ4yK_VHjYpU77bUlOfkpmsYvA10wu64DswVfLP9opFKCaO/exec" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            class="bg-purple-600 text-white p-3 rounded-full hover:bg-purple-700 transition duration-300">
+                            <i class="fas fa-chart-bar"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-1">Name</label>
+                                <input type="text" id="name" placeholder="Your name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" placeholder="your@email.com" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" placeholder="Research collaboration opportunity" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 mb-1">Message</label>
+                            <textarea id="message" rows="5" placeholder="Please use email to contact me since this web does not have backend" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition duration-300">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-purple-700 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Zinabu Bekele Tadesse. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
